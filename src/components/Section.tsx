@@ -1,0 +1,31 @@
+import { memo } from "react"
+import IconLabel, { IconProps } from "./IconLabel"
+
+export interface SectionProps {
+  Icon: React.ComponentType<IconProps>
+  title?: string
+  remark?: string
+  children?: React.ReactNode
+  className?: string
+}
+
+const Section = memo(({ Icon, title, remark, children, className = '' }: SectionProps) => {
+  return (
+    <div className="flex flex-col space-y-2 pt-4 border-t border-gray-700 dark:border-gray-300">
+      {title &&
+        <span className="flex flex-row items-center space-x-2">
+          <IconLabel
+            className="flex flex-row items-center space-x-2 text-lg font-black"
+            Icon={Icon}
+            label={title.toUpperCase()} />
+          {remark &&
+            <span className="font-light italic">{remark}</span>}
+        </span>}
+      <div className={`${className}`}>
+        {children}
+      </div>
+    </div>
+  )
+})
+
+export default Section

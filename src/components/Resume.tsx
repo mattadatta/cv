@@ -13,9 +13,9 @@ const NameAndTitleSection = memo(() => {
   const { name, tagline } = useCv().whoami
 
   return (
-    <div className="flex flex-col font-nunito text-lg">
+    <div className="flex flex-col font-nunito text-lg space-y-2">
       <h1 className="font-black text-6xl">{name.toUpperCase()}</h1>
-      <h2 className="font-bold text-xl text-gray-800 dark:text-gray-200">{tagline.toUpperCase()}</h2>
+      <h2 className="font-black text-xl text-gray-800 dark:text-gray-200">{tagline.toUpperCase()}</h2>
     </div>
   )
 })

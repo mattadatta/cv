@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Bitter';
+  src: url('../assets/fonts/Bitter.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('../assets/fonts/Comfortaa.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'CrimsonPro';
+  src: url('../assets/fonts/CrimsonPro.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('../assets/fonts/NunitoSans.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('../assets/fonts/PixelifySans.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('../assets/fonts/SourceCodePro.ttf') format('truetype');
+  font-weight: 100 900;
+}

@@ -2,7 +2,7 @@ import { memo } from "react"
 
 const InlineDivider = memo(() => {
   return (
-    <span className="font-black">/</span>
+    <span className="font-black">|</span>
   )
 })
 

@@ -50,7 +50,7 @@ const ThemeButton = memo(() => {
 
 const Controls = memo(() => {
   return (
-    <div className="absolute flex flex-col items-start space-y-2 p-4 w-48 top-0 -right-52 bg-gray-300 dark:bg-gray-700">
+    <div className="absolute flex flex-col items-start space-y-2 p-4 w-48 top-0 -right-52 bg-white dark:bg-gray-800">
       <span className="font-black">OPTIONS</span>
       <div className="flex flex-row space-x-2">
         <ThemeButton />
@@ -64,8 +64,8 @@ const Controls = memo(() => {
 const Paper = memo(() => {
   const { printableRef } = usePrint()
   return (
-    <div ref={printableRef as any} className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-nunito">
-      <ThemeWrapper className="flex flex-col items-stretch p-8 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-nunito">
+    <div ref={printableRef as any}>
+      <ThemeWrapper className="flex flex-col items-stretch p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-nunito">
         <Resume />
       </ThemeWrapper>
     </div>
@@ -85,7 +85,7 @@ const Container = memo(() => {
 
 const App = memo(() => {
   return (
-    <ThemeWrapper className="flex flex-col items-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <ThemeWrapper className="flex flex-col items-center bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <Container />
     </ThemeWrapper>
   )

@@ -13,7 +13,7 @@ const NameAndTitleSection = memo(() => {
   const { name, tagline } = useCv().whoami
 
   return (
-    <div className="flex flex-col text-lg space-y-2">
+    <div className="flex flex-col space-y-2">
       <h1 className="font-black text-6xl">{name.toUpperCase()}</h1>
       <h2 className="font-black text-xl text-gray-800 dark:text-gray-200">{tagline.toUpperCase()}</h2>
     </div>
@@ -27,7 +27,7 @@ const ContactSection = memo(() => {
   const reversedIconStyle = "flex flex-row-reverse items-center space-x-reverse space-x-2"
 
   return (
-    <div className="flex flex-col space-y-2 pb-2 text-gray-700 dark:text-gray-100">
+    <div className="flex flex-col space-y-2 pb-2 text-nowrap text-gray-700 dark:text-gray-100">
       <IconLabel
         className={reversedIconStyle}
         Icon={Smartphone}
@@ -57,7 +57,7 @@ const IdentityHeader = memo(() => {
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="flex flex-row space-x-4 justify-between">
+      <div className="flex flex-row justify-between">
         <NameAndTitleSection />
         <ContactSection />
       </div>

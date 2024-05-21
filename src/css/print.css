@@ -1,0 +1,37 @@
+@media all {
+  .page-break {
+    display: none;
+  }
+}
+
+@media print {
+  html, body {
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact !important;
+  }
+}
+
+@media print {
+  .page-break {
+    margin-top: 1rem;
+    display: block;
+    page-break-before: auto;
+    break-before: auto;
+  }
+  .no-print-margins {
+    margin: 0 !important;
+  }
+  .no-print-paddings {
+    padding: 0 !important;
+  }
+}
+
+@page {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  background-color: red;
+  size: auto;
+  margin: 2rem;
+}

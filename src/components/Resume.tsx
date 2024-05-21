@@ -1,6 +1,6 @@
-import { memo } from "react"
+import { Fragment, memo } from "react"
 import EmploymentEntry from "./EmploymentEntry"
-import { useCv } from "../store"
+import { useCv, useExapnded } from "../store"
 import Section from "./Section"
 import { AtSymbol, BriefcaseLocked, Education, Globe, Location, PackedBox, Smartphone, Tools } from "./icons"
 import IconLabel from "./IconLabel"
@@ -13,7 +13,7 @@ const NameAndTitleSection = memo(() => {
   const { name, tagline } = useCv().whoami
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col">
       <h1 className="font-black text-6xl">{name.toUpperCase()}</h1>
       <h2 className="font-black text-xl text-gray-800 dark:text-gray-200">{tagline.toUpperCase()}</h2>
     </div>
@@ -27,7 +27,7 @@ const ContactSection = memo(() => {
   const reversedIconStyle = "flex flex-row-reverse items-center space-x-reverse space-x-2"
 
   return (
-    <div className="flex flex-col space-y-2 pb-2 text-nowrap text-gray-700 dark:text-gray-100">
+    <div className="flex flex-col space-y-1 pb-2 text-nowrap text-gray-700 dark:text-gray-100">
       <IconLabel
         className={reversedIconStyle}
         Icon={Smartphone}
@@ -56,12 +56,12 @@ const IdentityHeader = memo(() => {
   const { summary } = useCv().whoami
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-1 pb-1">
       <div className="flex flex-row justify-between">
         <NameAndTitleSection />
         <ContactSection />
       </div>
-      <h3 className="text-gray-700 dark:text-gray-200">{summary}</h3>
+      <h3 className="text-gray-700 dark:text-gray-100 leading-5">{summary}</h3>
     </div>
   )
 })
@@ -93,41 +93,53 @@ const EducationSection = memo(() => {
 })
 
 const EmploymentSection = memo(() => {
-  const { employment } = useCv()
+  const employment = useCv().employment.filter((d) => !d.hidden)
+  const { isExpanded } = useExapnded()
+  const count = isExpanded ? employment.length : 3
 
   return (
     <Section
       Icon={BriefcaseLocked}
       title="Employment"
       remark="(references available upon request)"
-      className="flex flex-col items-stretch space-y-4"
+      className="flex flex-col items-stretch pb-2"
     >
-      {employment.map((d) => (
-        <EmploymentEntry key={d.endDate} data={d} />
+      {employment.slice(0, count).map((d, i) => (
+        <Fragment key={d.endDate}>
+          {(i > 0) && (<div className="border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 mb-1" />)}
+          <EmploymentEntry data={d} />
+        </Fragment>
       ))}
     </Section>
   )
 })
 
 const ProjectsSection = memo(() => {
-  const { projects } = useCv()
+  const projects = useCv().projects.filter((d) => !d.hidden)
+  const { isExpanded } = useExapnded()
+  const count = isExpanded ? projects.length : 2
 
   return (
     <Section
       Icon={PackedBox}
       title="Projects"
-      className="flex flex-col items-stretch space-y-4"
+      className="flex flex-col items-stretch"
     >
-      {projects.map((p) => (
-        <ProjectEntry key={p.title} data={p} />
+      {projects.slice(0, count).map((p, i) => (
+        <Fragment key={p.title}>
+          {(i > 0) && (<div className="border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 mb-2" />)}
+          <ProjectEntry data={p} />
+        </Fragment>
       ))}
     </Section>
   )
 })
 
 const Resume = memo(() => {
+  const { isExpanded } = useExapnded()
+
   return (
-    <div className="flex flex-col items-stretch space-y-4 leading-6">
+    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-1'}`}>
       <IdentityHeader />
       <ExpertiseSection />
       <EducationSection />

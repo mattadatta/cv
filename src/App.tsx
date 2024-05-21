@@ -67,7 +67,7 @@ const Paper = memo(() => {
   const { printableRef } = usePrint()
   return (
     <div ref={printableRef as any}>
-      <ThemeWrapper className="flex flex-col items-stretch p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-nunito">
+      <ThemeWrapper className="flex flex-col items-stretch p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-nunito">
         <Resume />
       </ThemeWrapper>
     </div>
@@ -85,7 +85,7 @@ const Container = memo(() => {
 
 const App = memo(() => {
   return (
-    <ThemeWrapper className="flex flex-col items-center bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <ThemeWrapper className="flex flex-col items-center bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white">
       <PrintProvider>
         <Container />
       </PrintProvider>

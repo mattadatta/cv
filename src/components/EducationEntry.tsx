@@ -38,7 +38,7 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
           {formatAddress(address)} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
       </span>
-      <span>{accolades.map((a, index) => (
+      <span className="text-sm">{accolades.map((a, index) => (
         <span key={index}> {a} {index < accolades.length - 1 ? <InlineDivider /> : null}
         </span>
       ))}</span>

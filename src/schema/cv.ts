@@ -36,6 +36,7 @@ export interface EducationInfo {
   startDate: string
   endDate: string
   address: Address
+  hidden?: boolean
 }
 
 export interface EmploymentInfo {
@@ -47,6 +48,7 @@ export interface EmploymentInfo {
   tags: string[]
   summary: string
   lines: string[]
+  hidden?: boolean
 }
 
 export interface ProjectInfo {
@@ -55,4 +57,5 @@ export interface ProjectInfo {
   links: string[]
   summary: string
   lines: string[]
+  hidden?: boolean
 }

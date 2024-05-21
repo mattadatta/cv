@@ -11,7 +11,8 @@ export interface SectionProps {
 
 const Section = memo(({ Icon, title, remark, children, className = '' }: SectionProps) => {
   return (
-    <div className="flex flex-col space-y-2 pt-4 border-t border-gray-700 dark:border-gray-300">
+    <div className="flex flex-col space-y-2 border-gray-700 dark:border-gray-300">
+      <div className="flex flex-col space-y-2 h-4 -mx-2 -mb-4 border-t border-l rounded-tl-lg border-gray-700 dark:border-gray-300" />
       {title &&
         <span className="flex flex-row items-center space-x-2">
           <IconLabel

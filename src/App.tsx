@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { useCondensed, useTheme } from "./store"
+import { useExapnded, useTheme } from "./store"
 import Button from "./components/Button"
 import Resume from './components/Resume'
 import { DarkIcon, LightIcon, PageAdd, PageRemove, Print } from "./components/icons"
@@ -21,11 +21,11 @@ const ThemeWrapper = memo(({ children, className = '' }: ThemeWrapperProps) => {
   )
 })
 
-const CondenseButton = memo(() => {
-  const { isCondensed, toggleCondensed } = useCondensed()
+const ExpandButton = memo(() => {
+  const { isExpanded, toggleExpanded } = useExapnded()
   return (
-    <Button onClick={toggleCondensed}>
-      {isCondensed ? (<PageAdd className="fill-current" />) : (<PageRemove className="fill-current" />)}
+    <Button onClick={toggleExpanded}>
+      {isExpanded ? (<PageRemove className="fill-current" />) : (<PageAdd className="fill-current" />)}
     </Button>
   )
 })
@@ -50,12 +50,14 @@ const ThemeButton = memo(() => {
 
 const Controls = memo(() => {
   return (
-    <div className="absolute flex flex-col items-start space-y-2 p-4 w-48 top-0 -right-52 bg-white dark:bg-gray-800">
-      <span className="font-black">OPTIONS</span>
-      <div className="flex flex-row space-x-2">
-        <ThemeButton />
-        <CondenseButton />
-        <PrintButton />
+    <div className="absolute w-48 top-0 -right-52">
+      <div className="fixed top-0 flex flex-col items-start space-y-2 p-4 bg-white dark:bg-gray-800">
+        <span className="font-black">OPTIONS</span>
+        <div className="flex flex-row space-x-2">
+          <ThemeButton />
+          <ExpandButton />
+          <PrintButton />
+        </div>
       </div>
     </div>
   )
@@ -74,19 +76,19 @@ const Paper = memo(() => {
 
 const Container = memo(() => {
   return (
-    <PrintProvider>
-      <div className="flex-1 flex flex-col items-stretch w-[216mm] relative">
-        <Paper />
-        <Controls />
-      </div>
-    </PrintProvider>
+    <div className="flex-1 flex flex-col items-stretch w-[216mm] relative">
+      <Paper />
+      <Controls />
+    </div>
   )
 })
 
 const App = memo(() => {
   return (
     <ThemeWrapper className="flex flex-col items-center bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <Container />
+      <PrintProvider>
+        <Container />
+      </PrintProvider>
     </ThemeWrapper>
   )
 })

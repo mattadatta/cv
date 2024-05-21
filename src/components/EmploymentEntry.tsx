@@ -4,6 +4,7 @@ import { formatMonthAndYear } from "../util/date"
 import { formatAddress } from "../util/address"
 import InlineDivider from "./InlineDivider"
 import TagBlock from "./TagBlock"
+import { useExapnded } from "../store"
 
 const formatDate = formatMonthAndYear
 
@@ -17,6 +18,7 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
     startDate, endDate,
     address, summary,
     tags, lines } = data
+  const { isExpanded } = useExapnded()
 
   return (
     <div className="flex flex-col items-stretch space-y-2 pt-3 border-dotted border-t border-gray-700 dark:border-gray-300">
@@ -28,7 +30,7 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
       </span>
       <span className="leading-5">{summary}</span>
       <TagBlock labels={tags} />
-      {lines &&
+      {isExpanded && lines &&
         <ul className="list-disc pl-4 leading-5 font-light space-y-1">
           {
             lines.map((l) => (

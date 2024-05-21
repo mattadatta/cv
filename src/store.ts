@@ -43,13 +43,13 @@ export const useTheme = create<ThemeState>()((set, get) => ({
 }))
 
 export interface CondensedState {
-  isCondensed: boolean
-  toggleCondensed: () => void
+  isExpanded: boolean
+  toggleExpanded: () => void
 }
 
-export const useCondensed = create<CondensedState>()((set, get) => ({
-  isCondensed: false,
-  toggleCondensed: () => set(produce((state: CondensedState) => {
-    state.isCondensed = !state.isCondensed
+export const useExapnded = create<CondensedState>()((set, get) => ({
+  isExpanded: false,
+  toggleExpanded: () => set(produce((state: CondensedState) => {
+    state.isExpanded = !state.isExpanded
   }))
 }))

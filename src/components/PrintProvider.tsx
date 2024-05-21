@@ -1,5 +1,6 @@
 import { ReactNode, ReactInstance, createContext, memo, useContext, useRef } from "react"
 import { useReactToPrint } from "react-to-print"
+import { useCv, useTheme } from "../store";
 
 type UseReactToPrintHookReturn = (event?: unknown, content?: (() => ReactInstance | null)) => void;
 
@@ -25,12 +26,20 @@ interface PrintProviderProps {
   children?: ReactNode
 }
 
+function sanitizeForFilename(input: string): string {
+  return input.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9-_]/g, '')
+}
+
 const PrintProvider = memo(({ children }: PrintProviderProps) => {
+  const { getTheme } = useTheme()
+  const name = sanitizeForFilename(useCv().whoami.name)
+  const themeSuffix = getTheme() === 'dark' ? '_dark' : ''
+  const documentTitle = `CV_${name}${themeSuffix}`
   const printableRef = useRef<ReactInstance | null>(null)
   const handlePrint = useReactToPrint({
     content: () => printableRef.current,
-    documentTitle: "cv",
-    pageStyle: "html, body { background-color: red; }",
+    documentTitle: documentTitle,
+    // pageStyle: "@page { background-color: blue; color: green; }",
     fonts: declaredFonts
   })
 

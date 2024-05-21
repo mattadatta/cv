@@ -1,5 +1,5 @@
 @import "css/base.css";
-@import "css/print.css";
+/* @import "css/print.css"; */
 @import "css/fonts_variable.css";
 
 @tailwind base;

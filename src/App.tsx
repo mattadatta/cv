@@ -76,7 +76,6 @@ const Paper = memo(() => {
 })
 
 const Container = memo(() => {
-  const { isExpanded } = useExapnded()
   return (
     <div className="flex-1 flex flex-col items-stretch w-[216mm] relative">
       <Paper />

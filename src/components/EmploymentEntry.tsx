@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { EmploymentInfo } from "../schema/cv"
-import { formatMonthAndYear, formatYear } from "../util/date"
+import { formatYear } from "../util/date"
 import { formatAddress } from "../util/address"
 import InlineDivider from "./InlineDivider"
 import TagBlock from "./TagBlock"
@@ -34,11 +34,9 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
       </div>
       {isExpanded && lines &&
         <ul className="list-disc pl-4 leading-5 font-light text-sm">
-          {
-            lines.map((l) => (
-              <li key={l}>{l}</li>
-            ))
-          }
+          {lines.map((l) => (
+            <li key={l}>{l}</li>
+          ))}
         </ul>}
     </div>
   )

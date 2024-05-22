@@ -1,14 +1,9 @@
 import { memo } from "react"
 import { ProjectInfo } from "../schema/cv"
-import { formatMonthAndYear } from "../util/date"
-import { formatAddress } from "../util/address"
-import InlineDivider from "./InlineDivider"
 import TagBlock from "./TagBlock"
 import IconLabel from "./IconLabel"
 import { Globe } from "./icons"
 import { useExapnded } from "../store"
-
-const formatDate = formatMonthAndYear
 
 export interface ProjectEntryProps {
   data: ProjectInfo

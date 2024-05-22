@@ -139,7 +139,7 @@ const Resume = memo(() => {
   const { isExpanded } = useExapnded()
 
   return (
-    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-1'}`}>
+    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-2'}`}>
       <IdentityHeader />
       <ExpertiseSection />
       <EducationSection />

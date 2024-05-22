@@ -68,7 +68,7 @@ const Paper = memo(() => {
   const { isExpanded } = useExapnded()
   return (
     <div ref={printableRef as any}>
-      <ThemeWrapper className={`flex flex-col items-stretch ${isExpanded ? 'h-[558.8mm]' : 'h-[279.4mm]'} p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-nunito`}>
+      <ThemeWrapper className={`flex flex-col items-stretch ${isExpanded ? 'h-[838.2mm]' : 'h-[279.4mm]'} p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-nunito`}>
         <Resume />
       </ThemeWrapper>
     </div>

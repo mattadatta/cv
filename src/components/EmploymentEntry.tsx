@@ -24,7 +24,7 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
     <div className={`flex flex-col items-stretch ${isExpanded ? 'space-y-1' : ''}`}>
       <span className="flex flex-row items-center justify-between">
         <span><span className="font-bold">{title}</span> <InlineDivider /> {company}</span>
-        <span className="text-gray-600 dark:text-gray-300 font-light">
+        <span className="text-gray-600 dark:text-white font-light">
           {address ? formatAddress(address) : "Various locations"} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
       </span>

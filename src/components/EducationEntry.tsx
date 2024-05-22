@@ -3,6 +3,7 @@ import { EducationInfo } from "../schema/cv"
 import { formatYear } from "../util/date"
 import { formatAddress } from "../util/address"
 import InlineDivider from "./InlineDivider"
+import { useExapnded } from "../store"
 
 const formatDate = formatYear
 
@@ -10,38 +11,23 @@ export interface EducationEntryProps {
   data: EducationInfo
 }
 
-// Slightly different layout
-
-// const EducationEntry = memo(({ data }: EducationEntryProps) => {
-//   const { degree, institution, startDate, endDate, address, accolades } = data
-
-//   return (
-//     <div className="flex flex-col items-stretch">
-//       <span><span className="font-bold">{degree}</span> <InlineDivider /> {institution}</span>
-//       <span className="text-gray-600 dark:text-gray-400">{formatDate(startDate)}-{formatDate(endDate)} <InlineDivider /> {formatAddress(address)}</span>
-//       <span>{accolades.map((a, index) => (
-//         <span key={index}> {a} {index < accolades.length - 1 ? <InlineDivider /> : null}
-//         </span>
-//       ))}</span>
-//     </div>
-//   )
-// })
-
 const EducationEntry = memo(({ data }: EducationEntryProps) => {
   const { degree, institution, startDate, endDate, address, accolades } = data
+  const { isExpanded } = useExapnded()
 
   return (
     <div className="flex flex-col items-stretch">
       <span className="flex flex-row items-center justify-between">
         <span><span className="font-bold">{degree}</span> <InlineDivider /> {institution}</span>
-        <span className="text-gray-600 dark:text-gray-300 font-light">
+        <span className="text-gray-600 dark:text-white font-light">
           {formatAddress(address)} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
       </span>
-      <span className="text-sm">{accolades.map((a, index) => (
-        <span key={index}> {a} {index < accolades.length - 1 ? <InlineDivider /> : null}
-        </span>
-      ))}</span>
+      <span className={`text-sm flex ${isExpanded ? 'flex-col' : 'flex-row space-x-1'}`}>
+        {accolades.map((a, index) => (
+          <span key={index}> {a} {((!isExpanded) && (index < accolades.length - 1)) ? <InlineDivider /> : null}</span>
+        ))}
+      </span>
     </div>
   )
 })

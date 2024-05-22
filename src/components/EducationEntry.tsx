@@ -34,7 +34,7 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
     <div className="flex flex-col items-stretch">
       <span className="flex flex-row items-center justify-between">
         <span><span className="font-bold">{degree}</span> <InlineDivider /> {institution}</span>
-        <span className="text-gray-600 dark:text-gray-300">
+        <span className="text-gray-600 dark:text-gray-300 font-light">
           {formatAddress(address)} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
       </span>

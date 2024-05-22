@@ -8,6 +8,7 @@ import EducationEntry from "./EducationEntry"
 import TagBlock from "./TagBlock"
 import ProjectEntry from "./ProjectEntry"
 import { formatAddress } from "../util/address"
+import InlineDivider from "./InlineDivider"
 
 const NameAndTitleSection = memo(() => {
   const { name, tagline } = useCv().whoami
@@ -106,6 +107,10 @@ const EmploymentSection = memo(() => {
     >
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
+          {isExpanded && (i == 1) && (
+            <div className="relative h-48">
+              <span className="absolute bottom-10 right-0 font-black">1 <InlineDivider /> 3</span>
+            </div>)}
           {(i > 0) && (<div className="border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 mb-1" />)}
           <EmploymentEntry data={d} />
         </Fragment>
@@ -144,7 +149,19 @@ const Resume = memo(() => {
       <ExpertiseSection />
       <EducationSection />
       <EmploymentSection />
+      {isExpanded && (
+        <div className="relative h-48">
+          <span className="absolute bottom-10 right-0 font-black">2 <InlineDivider /> 3</span>
+        </div>)}
       <ProjectsSection />
+      {isExpanded && (
+        <div className="relative h-[28rem]">
+          <span className="absolute bottom-10 right-0 font-black">3 <InlineDivider /> 3</span>
+        </div>)}
+      {!isExpanded && (
+        <div className="absolute bottom-0 right-8 w-24">
+          <span className="absolute bottom-8 right-0 font-black">1 <InlineDivider /> 1</span>
+        </div>)}
     </div>
   )
 })

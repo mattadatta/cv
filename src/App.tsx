@@ -4,6 +4,7 @@ import Button from "./components/Button"
 import Resume from './components/Resume'
 import { DarkIcon, LightIcon, PageAdd, PageRemove, Print } from "./components/icons"
 import { PrintProvider, usePrint } from "./components/PrintProvider"
+import InlineDivider from "./components/InlineDivider"
 
 interface ThemeWrapperProps {
   children: React.ReactNode
@@ -63,6 +64,24 @@ const Controls = memo(() => {
   )
 })
 
+const PageOverlays = memo(() => {
+  const { isExpanded } = useExapnded()
+  const pageCount = isExpanded ? 3 : 1
+  const pages = Array.from(new Array(pageCount), (_, i) => i)
+
+  return (
+    <div className="absolute left-0 top-0 right-0 flex flex-col">
+      {pages.map((i) => (
+        <div className="relative w-[216mm] h-[279.4mm]">
+          <span className="absolute bottom-8 right-8 font-black">
+            <span className="font-light">{i+1}</span> <InlineDivider /> <span className="font-light">{pageCount}</span>
+          </span>
+        </div>
+      ))}
+    </div>
+  )
+})
+
 const Paper = memo(() => {
   const { printableRef } = usePrint()
   const { isExpanded } = useExapnded()
@@ -70,6 +89,7 @@ const Paper = memo(() => {
     <div ref={printableRef as any}>
       <ThemeWrapper className={`flex flex-col items-stretch ${isExpanded ? 'h-[838.2mm]' : 'h-[279.4mm]'} p-8 no-print-paddings bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-nunito`}>
         <Resume />
+        <PageOverlays />
       </ThemeWrapper>
     </div>
   )

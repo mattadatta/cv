@@ -28,7 +28,7 @@ const ContactSection = memo(() => {
   const reversedIconStyle = "flex flex-row-reverse items-center space-x-reverse space-x-2"
 
   return (
-    <div className="flex flex-col space-y-1 pb-2 text-nowrap text-gray-700 dark:text-gray-100">
+    <div className="flex flex-col space-y-1 pb-2 text-nowrap">
       <IconLabel
         className={reversedIconStyle}
         Icon={Smartphone}
@@ -97,6 +97,7 @@ const EmploymentSection = memo(() => {
   const employment = useCv().employment.filter((d) => !d.hidden)
   const { isExpanded } = useExapnded()
   const count = isExpanded ? employment.length : 3
+  const bottomMargin = isExpanded ? 'mb-2' : 'mb-1'
 
   return (
     <Section
@@ -107,11 +108,8 @@ const EmploymentSection = memo(() => {
     >
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
-          {isExpanded && (i == 1) && (
-            <div className="relative h-48">
-              <span className="absolute bottom-10 right-0 font-black">1 <InlineDivider /> 3</span>
-            </div>)}
-          {(i > 0) && (<div className="border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 mb-1" />)}
+          {isExpanded && (i == 1) && (<div className="relative h-[8rem]" />)}
+          {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
         </Fragment>
       ))}
@@ -123,6 +121,7 @@ const ProjectsSection = memo(() => {
   const projects = useCv().projects.filter((d) => !d.hidden)
   const { isExpanded } = useExapnded()
   const count = isExpanded ? projects.length : 2
+  const bottomMargin = isExpanded ? 'mb-2' : 'mb-1'
 
   return (
     <Section
@@ -132,7 +131,7 @@ const ProjectsSection = memo(() => {
     >
       {projects.slice(0, count).map((p, i) => (
         <Fragment key={p.title}>
-          {(i > 0) && (<div className="border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 mb-2" />)}
+          {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <ProjectEntry data={p} />
         </Fragment>
       ))}
@@ -149,19 +148,8 @@ const Resume = memo(() => {
       <ExpertiseSection />
       <EducationSection />
       <EmploymentSection />
-      {isExpanded && (
-        <div className="relative h-48">
-          <span className="absolute bottom-10 right-0 font-black">2 <InlineDivider /> 3</span>
-        </div>)}
+      {isExpanded && (<div className="h-[4rem]" />)}
       <ProjectsSection />
-      {isExpanded && (
-        <div className="relative h-[28rem]">
-          <span className="absolute bottom-10 right-0 font-black">3 <InlineDivider /> 3</span>
-        </div>)}
-      {!isExpanded && (
-        <div className="absolute bottom-0 right-8 w-24">
-          <span className="absolute bottom-8 right-0 font-black">1 <InlineDivider /> 1</span>
-        </div>)}
     </div>
   )
 })

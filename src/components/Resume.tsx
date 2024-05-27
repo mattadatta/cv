@@ -108,7 +108,7 @@ const EmploymentSection = memo(() => {
     >
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
-          {isExpanded && (i == 1) && (<div className="relative h-[8rem]" />)}
+          {isExpanded && (i == 1) && (<div className="relative h-[7.5rem]" />)}
           {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
         </Fragment>

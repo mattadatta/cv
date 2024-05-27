@@ -70,9 +70,9 @@ const PageOverlays = memo(() => {
   const pages = Array.from(new Array(pageCount), (_, i) => i)
 
   return (
-    <div className="absolute left-0 top-0 right-0 flex flex-col">
+    <div className="absolute left-0 top-0 right-0 flex flex-col pointer-events-none">
       {pages.map((i) => (
-        <div className="relative w-[216mm] h-[279.4mm]">
+        <div className="relative w-[216mm] h-[279.4mm] pointer-events-none">
           <span className="absolute bottom-8 right-8 font-black">
             <span className="font-light">{i+1}</span> <InlineDivider /> <span className="font-light">{pageCount}</span>
           </span>

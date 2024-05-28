@@ -27,7 +27,7 @@ const ContactSection = memo(() => {
   const reversedIconStyle = "flex flex-row-reverse font-light items-center space-x-reverse space-x-2"
 
   return (
-    <div className="flex flex-col space-y-1 pb-2 text-nowrap">
+    <div className="flex flex-col space-y-1 mt-2 mb-2 text-nowrap">
       <IconLabel
         className={reversedIconStyle}
         Icon={Smartphone}
@@ -56,7 +56,7 @@ const IdentityHeader = memo(() => {
   const { summary } = useCv().whoami
 
   return (
-    <div className="flex flex-col space-y-1 pb-1">
+    <div className="flex flex-col space-y-1 pt-2 pb-1">
       <div className="flex flex-row justify-between">
         <NameAndTitleSection />
         <ContactSection />
@@ -108,7 +108,7 @@ const EmploymentSection = memo(() => {
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
           {/* TODO: need better way to do page management */}
-          {isExpanded && (i == 1) && (<div className="relative h-[7.25rem]" />)}
+          {isExpanded && (i == 1) && (<div className="relative h-[7rem]" />)}
 
           {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
@@ -144,13 +144,13 @@ const Resume = memo(() => {
   const { isExpanded } = useExapnded()
 
   return (
-    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-1'}`}>
+    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-1' : ''}`}>
       <IdentityHeader />
       <ExpertiseSection />
       <EducationSection />
       <EmploymentSection />
       {/* TODO: need better way to do page management */}
-      {isExpanded && (<div className="h-[4.5rem]" />)}
+      {isExpanded && (<div className="h-[5rem]" />)}
       <ProjectsSection />
     </div>
   )

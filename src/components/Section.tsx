@@ -11,22 +11,24 @@ export interface SectionProps {
 
 const Section = memo(({ Icon, title, remark, children, className = '' }: SectionProps) => {
   return (
-    <div className="flex flex-col border-gray-700 dark:border-gray-300 pb-1">
-      {/* <div className="flex flex-col space-y-2 h-4 -mx-2 -mb-2 border-t border-l rounded-tl-lg border-gray-700 dark:border-gray-300" /> */}
-      <div className="flex flex-col space-y-2 h-1 border-t border-gray-400 dark:border-gray-600" />
-      {title &&
-        <span className="flex flex-row items-center space-x-2">
-          <IconLabel
-            className="flex flex-row items-center space-x-2 text-lg font-black my-1"
-            Icon={Icon}
-            label={title.toUpperCase()} />
-          {remark &&
-            <span className="font-light">{remark}</span>}
-        </span>}
-      <div className={`${className}`}>
-        {children}
+    <>
+      <div className="flex flex-col h-0.5 border-t border-gray-400 dark:border-gray-600" />
+      <div className="flex flex-col pb-1">
+        {/* <div className="flex flex-col space-y-2 h-4 -mx-2 -mb-2 border-t border-l rounded-tl-lg border-gray-700 dark:border-gray-300" /> */}
+        {title &&
+          <span className="flex flex-row items-center space-x-2">
+            <IconLabel
+              className="flex flex-row items-center space-x-2 text-lg font-black my-1"
+              Icon={Icon}
+              label={title.toUpperCase()} />
+            {remark &&
+              <span className="font-light">{remark}</span>}
+          </span>}
+        <div className={`${className}`}>
+          {children}
+        </div>
       </div>
-    </div>
+    </>
   )
 })
 

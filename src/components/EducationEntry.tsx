@@ -32,7 +32,7 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
           <ul className="list-none leading-5 font-light text-sm">
           {accolades.map((l, i) => (
             <li key={i} className="flex">
-              <ArrowRight className="fill-current shrink-0 w-6 h-6 -ml-[0.5rem] -mt-[0.15rem] mr-[0.1rem]" /><span className="">{l}</span>
+              <ArrowRight className="fill-current shrink-0 w-6 h-6 -ml-[0.5rem] -mt-[0.175rem] mr-[0.1rem]" /><span className="">{l}</span>
             </li>
           ))}
         </ul>

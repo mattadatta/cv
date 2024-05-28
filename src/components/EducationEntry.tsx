@@ -17,12 +17,12 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
 
   return (
     <div className="flex flex-col items-stretch">
-      <span className="flex flex-row items-center justify-between">
+      <div className={`flex flex-row items-center justify-between ${isExpanded ? '' : 'mb-1'}`}>
         <span><span className="font-bold">{degree}</span> <InlineDivider /> {institution}</span>
         <span className="text-gray-600 dark:text-white font-light">
-          {formatAddress(address)} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
+          {formatAddress(address)} <InlineDivider /> <span className="">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
-      </span>
+      </div>
       <span className={`text-sm flex ${isExpanded ? 'flex-col' : 'flex-row space-x-1'}`}>
         {accolades.map((a, index) => (
           <span key={index}> {a} {((!isExpanded) && (index < accolades.length - 1)) ? <InlineDivider /> : null}</span>

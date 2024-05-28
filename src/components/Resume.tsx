@@ -8,7 +8,6 @@ import EducationEntry from "./EducationEntry"
 import TagBlock from "./TagBlock"
 import ProjectEntry from "./ProjectEntry"
 import { formatAddress } from "../util/address"
-import InlineDivider from "./InlineDivider"
 
 const NameAndTitleSection = memo(() => {
   const { name, tagline } = useCv().whoami
@@ -25,7 +24,7 @@ const ContactSection = memo(() => {
   const { address, contactInfo } = useCv().whoami
   const { number, email, links } = contactInfo
 
-  const reversedIconStyle = "flex flex-row-reverse items-center space-x-reverse space-x-2"
+  const reversedIconStyle = "flex flex-row-reverse font-light items-center space-x-reverse space-x-2"
 
   return (
     <div className="flex flex-col space-y-1 pb-2 text-nowrap">
@@ -108,7 +107,9 @@ const EmploymentSection = memo(() => {
     >
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
-          {isExpanded && (i == 1) && (<div className="relative h-[7.5rem]" />)}
+          {/* TODO: need better way to do page management */}
+          {isExpanded && (i == 1) && (<div className="relative h-[7rem]" />)}
+
           {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
         </Fragment>
@@ -143,12 +144,13 @@ const Resume = memo(() => {
   const { isExpanded } = useExapnded()
 
   return (
-    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-2'}`}>
+    <div className={`flex flex-col items-stretch leading-6 ${isExpanded ? 'space-y-2' : 'space-y-1'}`}>
       <IdentityHeader />
       <ExpertiseSection />
       <EducationSection />
       <EmploymentSection />
-      {isExpanded && (<div className="h-[4rem]" />)}
+      {/* TODO: need better way to do page management */}
+      {isExpanded && (<div className="h-[4.5rem]" />)}
       <ProjectsSection />
     </div>
   )

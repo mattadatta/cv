@@ -21,7 +21,7 @@ const Section = memo(({ Icon, title, remark, children, className = '' }: Section
             Icon={Icon}
             label={title.toUpperCase()} />
           {remark &&
-            <span className="font-light italic">{remark}</span>}
+            <span className="font-light">{remark}</span>}
         </span>}
       <div className={`${className}`}>
         {children}

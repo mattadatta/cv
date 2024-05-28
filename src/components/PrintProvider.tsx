@@ -4,16 +4,53 @@ import { useCv, useExapnded, useTheme } from "../store";
 
 type UseReactToPrintHookReturn = (event?: unknown, content?: (() => ReactInstance | null)) => void;
 
-const declaredFonts = [
+const variableFonts = [
   {
     family: "NunitoSans",
+    style: "normal",
     source: `url("./src/assets/fonts/NunitoSans.ttf") format("truetype")`,
   },
   {
     family: "SourceCodePro",
+    style: "normal",
     source: `url("./src/assets/fonts/SourceCodePro.ttf") format("truetype")`,
   }
 ]
+
+const staticFonts = [
+  {
+    family: "NunitoSans",
+    style: "normal",
+    weight: "300",
+    source: `url("./src/assets/fonts/static/NunitoSans-Light.ttf") format("truetype")`,
+  },
+  {
+    family: "NunitoSans",
+    style: "normal",
+    weight: "400",
+    source: `url("./src/assets/fonts/static/NunitoSans-Regular.ttf") format("truetype")`,
+  },
+  {
+    family: "NunitoSans",
+    style: "normal",
+    weight: "700",
+    source: `url("./src/assets/fonts/static/NunitoSans-Bold.ttf") format("truetype")`,
+  },
+  {
+    family: "NunitoSans",
+    style: "normal",
+    weight: "900",
+    source: `url("./src/assets/fonts/static/NunitoSans-Black.ttf") format("truetype")`,
+  },
+  {
+    family: "SourceCodePro",
+    style: "normal",
+    weight: "400",
+    source: `url("./src/assets/fonts/static/SourceCodePro-Regular.ttf") format("truetype")`,
+  }
+]
+
+const declaredFonts = staticFonts
 
 interface PrintProviderData {
   printableRef: React.MutableRefObject<ReactInstance | null>

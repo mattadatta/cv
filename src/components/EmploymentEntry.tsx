@@ -21,13 +21,13 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
   const { isExpanded } = useExapnded()
 
   return (
-    <div className={`flex flex-col items-stretch ${isExpanded ? 'space-y-1' : ''}`}>
-      <span className="flex flex-row items-center justify-between">
+    <div className={`flex flex-col items-stretch`}>
+      <div className={`flex flex-row items-center justify-between ${isExpanded ? 'mb-1' : ''}`}>
         <span><span className="font-bold">{title}</span> <InlineDivider /> {company}</span>
         <span className="text-gray-600 dark:text-white font-light">
-          {address ? formatAddress(address) : "Various locations"} <InlineDivider /> <span className="font-bold">{formatDate(startDate)} - {formatDate(endDate)}</span>
+          {address ? formatAddress(address) : "Various locations"} <InlineDivider /> <span className="">{formatDate(startDate)} - {formatDate(endDate)}</span>
         </span>
-      </span>
+      </div>
       <span className="leading-5 text-sm">{summary}</span>
       <div className={`${isExpanded ? '' : '-mb-2'}`}>
         <TagBlock labels={tags} />

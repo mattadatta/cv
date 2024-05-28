@@ -1,6 +1,7 @@
 @import "css/base.css";
 /* @import "css/print.css"; */
-@import "css/fonts_variable.css";
+/* @import "css/fonts_variable.css"; */
+@import "css/fonts_static.css";
 
 @tailwind base;
 @tailwind components;

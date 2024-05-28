@@ -13,12 +13,12 @@ const ProjectEntry = memo(({ data }: ProjectEntryProps) => {
   const { title, tags, links, summary, lines } = data
   const { isExpanded } = useExapnded()
 
-  const reversedIconStyle = "flex flex-row-reverse items-center space-x-reverse space-x-2"
+  const reversedIconStyle = "flex flex-row-reverse font-light items-center space-x-reverse space-x-2"
 
   return (
     // py-2 border-dotted border-t
     <div className="flex flex-col items-stretch border-gray-700 dark:border-gray-300">
-      <div className="flex justify-between">
+      <div className={`flex justify-between ${isExpanded ? 'mb-1' : ''}`}>
         <span className="font-bold">{title}</span>
         {links.map((url) => (
           <IconLabel

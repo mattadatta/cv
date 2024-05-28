@@ -4,6 +4,7 @@ import { formatYear } from "../util/date"
 import { formatAddress } from "../util/address"
 import InlineDivider from "./InlineDivider"
 import { useExapnded } from "../store"
+import { ArrowRight } from "./icons"
 
 const formatDate = formatYear
 
@@ -24,9 +25,18 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
         </span>
       </div>
       <span className={`text-sm flex ${isExpanded ? 'flex-col' : 'flex-row space-x-1'}`}>
-        {accolades.map((a, index) => (
-          <span key={index}> {a} {((!isExpanded) && (index < accolades.length - 1)) ? <InlineDivider /> : null}</span>
+        {!isExpanded && accolades.map((a, index) => (
+          <span key={index}> {a} {(index < accolades.length - 1) ? <InlineDivider /> : null}</span>
         ))}
+        {isExpanded && (
+          <ul className="list-none leading-5 font-light text-sm">
+          {accolades.map((l, i) => (
+            <li key={i} className="flex">
+              <ArrowRight className="fill-current shrink-0 w-6 h-6 -ml-[0.5rem] -mt-[0.15rem] mr-[0.1rem]" /><span className="">{l}</span>
+            </li>
+          ))}
+        </ul>
+        )}
       </span>
     </div>
   )

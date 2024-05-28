@@ -1,12 +1,4 @@
 
-.page-start {
-  margin-top: 2rem;
-}
-
-.page-end {
-  margin-bottom: 2rem;
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

@@ -1,0 +1,267 @@
+{
+    "whoami": {
+        "name": "Matthew C. Brown",
+        "contactInfo": {
+            "number": "+_ (___) ___-____",
+            "email": "me.matt.brown@gmail.com",
+            "links": [
+                "https://github.com/mattadatta",
+                "https://www.linkedin.com/in/mattadatta"
+            ]
+        },
+        "address": {
+            "street": "",
+            "postalCode": "",
+            "city": "Ottawa",
+            "province": "Ontario",
+            "country": "Canada"
+        },
+        "tagline": "Mobile & Web Apps Expert",
+        "summary": "Mobile and web applications developer with more than a decade of experience specializing in cross-platform and native mobile app development and user experience design",
+        "tags": [
+            "git",
+            "ios",
+            "android",
+            "swift",
+            "obj-c",
+            "kotlin",
+            "java",
+            "react",
+            "react-native",
+            "rust",
+            "javascript",
+            "clojure",
+            "cljs",
+            "c/c++",
+            "c#",
+            "python",
+            "go",
+            "tauri",
+            "electron",
+            "flutter",
+            "macos",
+            "windows"
+        ]
+    },
+    "education": [
+        {
+            "degree": "Bachelor of Computer Science",
+            "accolades": [
+                "Highest Honours",
+                "Minor in Mathematics",
+                "Co-op",
+                "Dean's List 2008 - 2013"
+            ],
+            "institution": "Carleton University",
+            "startDate": "2008-09-01",
+            "endDate": "2013-06-01",
+            "address": {
+                "street": "1125 Colonel By Dr",
+                "postalCode": "K1S 5B6",
+                "city": "Ottawa",
+                "province": "Ontario",
+                "country": "Canada"
+            }
+        }
+    ],
+    "employment": [
+        {
+            "title": "Software Developer",
+            "company": "7 Theta Inc.",
+            "address": {
+                "city": "Ottawa",
+                "province": "Ontario",
+                "country": "Canada"
+            },
+            "startDate": "2021-01-04",
+            "endDate": "2024-05-15",
+            "tags": [
+                "android",
+                "react-native",
+                "kotlin",
+                "java",
+                "cljs",
+                "clojure",
+                "react",
+                "javascript",
+                "go",
+                "c#",
+                "electron"
+            ],
+            "summary": "Lead developer for numerous mission-critical Android applications. Leveraging React Native and ClojureScript, I built tools and applications that facilitated secure communications and application distribution and deployment.",
+            "lines": [
+                "Utilized React Native on Android to leverage much of our existing JavaScript and ClojureScript infrastructure, allowing for incredibly concise, declarative code, resuliting in rapid application development and deployment",
+                "Developed reactive UIs for applications and services requiring real-time data processing and visualization; designed user experiences involving browsing application catalogues, sending messages and uploading multimedia, and displaying charts and statistics",
+                "Employed offline-first strategies to create satisfying user experiences in low-connectivity environments; wrote sophisticated synchronization logic that faciliated efficient downloading of application data through websockets when connectivity was available",
+                "Leveraged the Android Device Policy Manager API to develop a bespoke MDM solution that enabled the secure remote management of devices, while also facilitating the distribution of applications to end-users",
+                "Developed several custom React Native library projects for use within our mobile applications, including a library for establishing secure mTLS connections, as well as performant QR code reader for scanning and extracting payloads",
+                "Utilized Electron and .NET-based frameworks to develop Windows applications with a ClojureScript frontend and a C# backend; leveraged existing React and TailwindCSS infrastructure to create an effective UI that wrapped functionality provided by third-party Windows DLLs"
+            ]
+        },
+        {
+            "title": "Independent Contractor",
+            "company": "Self-employed",
+            "startDate": "2017-07-15",
+            "endDate": "2021-01-03",
+            "tags": [
+                "ios",
+                "android",
+                "react-native",
+                "swift",
+                "obj-c",
+                "kotlin",
+                "java",
+                "typescript",
+                "python",
+                "flutter"
+            ],
+            "summary": "Provided clients, both locally and internationally, with start-to-finish development and deployment for applications of all kinds across diverse platforms, including iOS, Android, Roku, and web.",
+            "lines": [
+                "Led the development of an iOS/iPadOS TV-anywhere application, utilizing DRM-related SDKs and frameworks for protecting and delivering encrypted digital content on Apple devices; implemented intuitive interfaces and controls resulting in a rich viewing experience for end-users",
+                "Led the development on the React Native mobile application of a grocery savings platform; leveraged machine learning for object detection to implement a sophisticated computer vision pipeline that performed on-device inferences of live camera images, identifying and extracting meaningful product-specific data to deliver relevant price and product information to end-users",
+                "Led the development of an iOS photo-sharing and rating application with bespoke animations and UI for generating meaningful feedback; implemented and managed a Firebase application instance to serve as our backend infrastructure",
+                "Led the development of an iOS augmented reality application that allowed users to customize footwear and visualize it in their environment; utilized SceneKit and ARKit to create a native and responsive user experience"
+            ]
+        },
+        {
+            "title": "Senior Software Engineer",
+            "company": "Synacor Inc.",
+            "address": {
+                "city": "Ottawa",
+                "province": "Ontario",
+                "country": "Canada"
+            },
+            "startDate": "2013-11-02",
+            "endDate": "2017-07-14",
+            "tags": [
+                "ios",
+                "android",
+                "swift",
+                "obj-c",
+                "cocoapods",
+                "java"
+            ],
+            "summary": "Worked with and guided a team of developers to mobilize many existing Synacor services and bring a consistent generation of TV-anywhere and email products to iOS and Android.",
+            "lines": [
+                "Worked with designers to create elegant and functional iOS and Android user experiences with a pixel-level attention to detail",
+                "Utilized SDKs specializing in protecting and delivering encrypted digital video content and crafted scenes and interfaces that resulted in rich and immersive viewing experiences for end users",
+                "Developed reusable view component libraries and patterns to simplifly and expedite the implementation of common UX use-cases",
+                "Led the development of the Cloud ID™ SDK for iOS, simplifying the login process for subscribers of our partners' products and services, drastically decreasing the amount of time required to deploy to market and onboard users into our applications"
+            ]
+        },
+        {
+            "title": "Software Developer",
+            "company": "Teknision Inc.",
+            "address": {
+                "city": "Ottawa",
+                "province": "Ontario",
+                "country": "Canada"
+            },
+            "startDate": "2013-05-01",
+            "endDate": "2013-11-01",
+            "tags": [
+                "android",
+                "java"
+            ],
+            "summary": "Later acquired by Synacor for our team's mobile device capabilities and technology, at Teknision, I developed a deep familiarity with Android building custom launchers for wireless communications providers.",
+            "lines": [
+                "Worked with designers to implement a cohesive experience across all aspects of a bespoke Android Launcher, including unique animations and gestures for interacting with the UI, as well as custom overscroll functionality",
+                "Wrote performant code responsible for managing the state of the UI in numerous scenarios, including application catalogue management, widget customization, application launching, and task-switching",
+                "Utilized the AOSP to assist in the development of a customized Android ROM that incorporated our launcher, customizing OS source as necessary based on the needs of our client",
+                "Led the refactor and redesign of several internal tools and core libraries that were integral to our common infrastructure and top-level application projects"
+            ]
+        },
+        {
+            "hidden": true,
+            "title": "IT Security General Support Specialist",
+            "company": "2Keys Security Solutions",
+            "address": {
+                "city": "Ottawa",
+                "province": "Ontario",
+                "country": "Canada"
+            },
+            "startDate": "2012-01-01",
+            "endDate": "2012-08-30",
+            "tags": [
+                "co-op",
+                "java",
+                "junit"
+            ],
+            "summary": "Developed and maintained an automated testing suite to test the reliability and functionality of our Government of Canada Branded Credential Service project, a single sign-on user authentication service.",
+            "lines": []
+        }
+    ],
+    "projects": [
+        {
+            "title": "Curriculum Vitae",
+            "tags": [
+                "react",
+                "typescript",
+                "tailwindcss",
+                "vite"
+            ],
+            "links": [
+                "https://github.com/mattadatta/cv"
+            ],
+            "summary": "This résumé is actually React web app written using TypeScript and TailwindCSS.",
+            "lines": [
+                "Designed to be easily exported in the webpage as a PDF, suitable for printing if necessary",
+                "Built with quick customizability in mind, allowing for dark or light variants, condensed single-page or detailed multi-page viewing"
+            ]
+        },
+        {
+            "title": "CollectionView.swift",
+            "tags": [
+                "ios",
+                "swift",
+                "uikit",
+                "swiftui"
+            ],
+            "links": [
+                "https://gist.github.com/mattadatta"
+            ],
+            "summary": "An elegant SwiftUI wrapper around UIKit's UICollectionView API",
+            "lines": [
+                "Bridges UICollectionView into SwiftUI, providing an easier way to render dynamic collections of content as SwiftUI continues to mature",
+                "Flexible and declarative API allows for a high degree of customizability in just a few lines, while providing direct access to UIKit API if necessary"
+            ]
+        },
+        {
+            "title": "Cursieve",
+            "tags": [
+                "rust",
+                "cargo",
+                "crates.io"
+            ],
+            "links": [
+                "https://github.com/mattadatta/cursieve"
+            ],
+            "summary": "A Rust crate for serializing and deserializing binary data to and from annotated structures.",
+            "lines": [
+                "Developed to make packing and unpacking binary data files easier; Rust structs define the shape of the data, and re-serialzing the structure into existing binary data leaves undefined regions of bytes untouched",
+                "Leverages Rust's powerful annotation and macro system, allowing for an incredibly concise and declarative syntax for specifying which fields map to which regions of data",
+                "Developed primarily for use in my save-editor application projects, for modifying the contents of save files of particular video games"
+            ]
+        },
+        {
+            "title": "SA2 Gardening Tools",
+            "tags": [
+                "tauri",
+                "react",
+                "typescript",
+                "rust",
+                "serde",
+                "tailwindcss"
+            ],
+            "links": [
+                "https://github.com/mattadatta/sa2-gardening-tools"
+            ],
+            "summary": "A cross-platform desktop application for editing save files from the Sonic Adventure 2 video game",
+            "lines": [
+                "Built using Tauri with a Rust backend and a TypeScript + React + TailwindCSS frontend",
+                "Developed in tandem with Cursieve, to make defining the Rust types that represent the structure of the save file easy",
+                "Additionally uses Serde to allow for easy transformation of Rust types to and from JSON structures, of which the frontend can easily articulate to provide a UI that displays and can modify the data, which can then be reserialized into bytes using Cursieve"
+            ]
+        }
+    ]
+}

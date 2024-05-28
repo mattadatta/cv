@@ -2,7 +2,7 @@ import { Fragment, memo } from "react"
 import EmploymentEntry from "./EmploymentEntry"
 import { useCv, useExapnded } from "../store"
 import Section from "./Section"
-import { AtSymbol, BriefcaseLocked, Education, Globe, Location, PackedBox, Smartphone, Tools } from "./icons"
+import { AtSymbol, BriefcaseLocked, Education, Github, Globe, LinkedIn, Location, PackedBox, Smartphone, Tools } from "./icons"
 import IconLabel from "./IconLabel"
 import EducationEntry from "./EducationEntry"
 import TagBlock from "./TagBlock"
@@ -36,14 +36,18 @@ const ContactSection = memo(() => {
         className={reversedIconStyle}
         Icon={AtSymbol}
         label={email} />
-      {links.map((url) => (
-        <IconLabel
-          className={reversedIconStyle}
-          key={url}
-          Icon={Globe}
-          label={url}
-          isHyperlink={true} />
-      ))}
+      {links.map((url) => {
+        const isLinkedIn = url.includes("linkedin")
+        const isGithub = url.includes("github")
+        const Icon = isLinkedIn ? LinkedIn : isGithub ? Github : Globe
+        return (
+          <IconLabel
+            className={reversedIconStyle}
+            key={url}
+            Icon={Icon}
+            label={url}
+            isHyperlink={true} />)
+      })}
       <IconLabel
         className={reversedIconStyle}
         Icon={Location}
@@ -108,7 +112,7 @@ const EmploymentSection = memo(() => {
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
           {/* TODO: need better way to do page management */}
-          {isExpanded && (i == 1) && (<div className="relative h-[7rem]" />)}
+          {isExpanded && (i == 1) && (<div className="relative h-[6.5rem]" />)}
 
           {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
@@ -150,7 +154,7 @@ const Resume = memo(() => {
       <EducationSection />
       <EmploymentSection />
       {/* TODO: need better way to do page management */}
-      {isExpanded && (<div className="h-[5rem]" />)}
+      {isExpanded && (<div className="h-[6rem]" />)}
       <ProjectsSection />
     </div>
   )

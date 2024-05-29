@@ -48,10 +48,13 @@ const ContactSection = memo(() => {
             label={url}
             isHyperlink={true} />)
       })}
-      <IconLabel
-        className={reversedIconStyle}
-        Icon={Location}
-        label={formatAddress(address)} />
+      <span className="flex flex-row-reverse items-center space-x-reverse space-x-1">
+        <IconLabel
+          className={reversedIconStyle}
+          Icon={Location}
+          label={formatAddress(address)} />
+        <span className="font-light">{"(+ Remote/Hybrid) "}</span>
+      </span>
     </div>
   )
 })

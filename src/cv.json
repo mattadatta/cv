@@ -90,7 +90,7 @@
             ],
             "summary": "Lead developer for numerous mission-critical Android applications. Leveraging React Native and ClojureScript, I built tools and applications that facilitated secure communications and application distribution and deployment.",
             "lines": [
-                "Utilized React Native on Android to leverage much of our existing JavaScript and ClojureScript infrastructure, allowing for incredibly concise, declarative code, resuliting in rapid application development and deployment",
+                "Utilized React Native on Android to leverage our existing JavaScript and ClojureScript infrastructure, allowing for incredibly concise and declarative code, contributing to rapid application development and deployment",
                 "Developed reactive UIs for applications and services requiring real-time data processing and visualization; designed user experiences involving browsing application catalogues, sending messages and uploading multimedia, and displaying charts and statistics",
                 "Employed offline-first strategies to create satisfying user experiences in low-connectivity environments; wrote sophisticated synchronization logic that faciliated efficient downloading of application data through websockets when connectivity was available",
                 "Leveraged the Android Device Policy Manager API to develop a bespoke MDM solution that enabled the secure remote management of devices, while also facilitating the distribution of applications to end-users",

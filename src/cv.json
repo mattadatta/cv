@@ -92,7 +92,7 @@
             "lines": [
                 "Utilized React Native on Android to leverage our existing JavaScript and ClojureScript infrastructure, allowing for incredibly concise and declarative code, contributing to rapid application development and deployment",
                 "Developed reactive UIs for applications and services requiring real-time data processing and visualization; designed user experiences involving browsing application catalogues, sending messages and uploading multimedia, and displaying charts and statistics",
-                "Employed offline-first strategies to create satisfying user experiences in low-connectivity environments; wrote sophisticated synchronization logic that faciliated efficient downloading of application data through websockets when connectivity was available",
+                "Employed offline-first strategies to create satisfying user experiences in low-connectivity environments; wrote sophisticated synchronization logic that facilitated efficient downloading of application data through websockets when connectivity was available",
                 "Leveraged the Android Device Policy Manager API to develop a bespoke MDM solution that enabled the secure remote management of devices, while also facilitating the distribution of applications to end-users",
                 "Developed several custom React Native library projects for use within our mobile applications, including a library for establishing secure mTLS connections, as well as performant QR code reader for scanning and extracting payloads",
                 "Utilized Electron and .NET-based frameworks to develop Windows applications with a ClojureScript frontend and a C# backend; leveraged existing React and TailwindCSS infrastructure to create an effective UI that wrapped functionality provided by third-party Windows DLLs"
@@ -145,7 +145,7 @@
             "lines": [
                 "Worked with designers to create elegant and functional iOS and Android user experiences with a pixel-level attention to detail",
                 "Utilized SDKs specializing in protecting and delivering encrypted digital video content and crafted scenes and interfaces that resulted in rich and immersive viewing experiences for end users",
-                "Developed reusable view component libraries and patterns to simplifly and expedite the implementation of common UX use-cases",
+                "Developed reusable view component libraries and patterns to simplify and expedite the implementation of common UX use-cases",
                 "Led the development of the Cloud ID™ SDK for iOS, simplifying the login process for subscribers of our partners' products and services, drastically decreasing the amount of time required to deploy to market and onboard users into our applications"
             ]
         },
@@ -238,7 +238,7 @@
             ],
             "summary": "A Rust crate for serializing and deserializing binary data to and from annotated structures.",
             "lines": [
-                "Developed to make packing and unpacking binary data files easier; Rust structs define the shape of the data, and re-serialzing the structure into existing binary data leaves undefined regions of bytes untouched",
+                "Developed to make packing and unpacking binary data files easier; Rust structs define the shape of the data, and reserializing the structure into existing binary data leaves undefined regions of bytes untouched",
                 "Leverages Rust's powerful annotation and macro system, allowing for an incredibly concise and declarative syntax for specifying which fields map to which regions of data",
                 "Developed primarily for use in my save-editor application projects, for modifying the contents of save files of particular video games"
             ]

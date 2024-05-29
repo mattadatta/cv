@@ -53,7 +53,7 @@ const ContactSection = memo(() => {
           className={reversedIconStyle}
           Icon={Location}
           label={formatAddress(address)} />
-        <span className="font-light">{"(+ Remote/Hybrid) "}</span>
+        <span className="font-light text-xs">{"(+ Remote/Hybrid) "}</span>
       </span>
     </div>
   )

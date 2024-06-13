@@ -1,21 +1,21 @@
-import { ReactNode, ReactInstance, createContext, memo, useContext, useRef } from "react"
+import { ReactNode, ReactInstance, createContext, useContext, useRef } from "react"
 import { useReactToPrint } from "react-to-print"
 import { useCv, useExapnded, useTheme } from "../store";
 
 type UseReactToPrintHookReturn = (event?: unknown, content?: (() => ReactInstance | null)) => void;
 
-const variableFonts = [
-  {
-    family: "NunitoSans",
-    style: "normal",
-    source: `url("./src/assets/fonts/NunitoSans.ttf") format("truetype")`,
-  },
-  {
-    family: "SourceCodePro",
-    style: "normal",
-    source: `url("./src/assets/fonts/SourceCodePro.ttf") format("truetype")`,
-  }
-]
+// const variableFonts = [
+//   {
+//     family: "NunitoSans",
+//     style: "normal",
+//     source: `url("./src/assets/fonts/NunitoSans.ttf") format("truetype")`,
+//   },
+//   {
+//     family: "SourceCodePro",
+//     style: "normal",
+//     source: `url("./src/assets/fonts/SourceCodePro.ttf") format("truetype")`,
+//   }
+// ]
 
 const staticFonts = [
   {
@@ -67,7 +67,7 @@ function sanitizeForFilename(input: string): string {
   return input.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9-_]/g, '')
 }
 
-const PrintProvider = memo(({ children }: PrintProviderProps) => {
+const PrintProvider = ({ children }: PrintProviderProps) => {
   const { getTheme } = useTheme()
   const { isExpanded } = useExapnded()
 
@@ -89,7 +89,7 @@ const PrintProvider = memo(({ children }: PrintProviderProps) => {
       {children}
     </Context.Provider>
   )
-})
+}
 
 function usePrint(): PrintProviderData {
   return useContext(Context)!

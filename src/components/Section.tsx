@@ -1,4 +1,3 @@
-import { memo } from "react"
 import IconLabel, { IconProps } from "./IconLabel"
 
 export interface SectionProps {
@@ -9,7 +8,7 @@ export interface SectionProps {
   className?: string
 }
 
-const Section = memo(({ Icon, title, remark, children, className = '' }: SectionProps) => {
+const Section = ({ Icon, title, remark, children, className = '' }: SectionProps) => {
   return (
     <>
       <div className="flex flex-col h-0.5 border-t border-gray-400 dark:border-gray-600" />
@@ -30,6 +29,6 @@ const Section = memo(({ Icon, title, remark, children, className = '' }: Section
       </div>
     </>
   )
-})
+}
 
 export default Section

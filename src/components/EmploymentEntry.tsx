@@ -1,4 +1,3 @@
-import { memo } from "react"
 import { EmploymentInfo } from "../schema/cv"
 import { formatYear } from "../util/date"
 import { formatAddress } from "../util/address"
@@ -13,7 +12,7 @@ export interface EmploymentEntryProps {
   data: EmploymentInfo
 }
 
-const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
+const EmploymentEntry = ({ data }: EmploymentEntryProps) => {
   const {
     title, company,
     startDate, endDate,
@@ -43,6 +42,6 @@ const EmploymentEntry = memo(({ data }: EmploymentEntryProps) => {
         </ul>}
     </div>
   )
-})
+}
 
 export default EmploymentEntry

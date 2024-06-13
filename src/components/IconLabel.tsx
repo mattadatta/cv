@@ -1,4 +1,3 @@
-import { memo } from "react"
 import Hyperlink from "./Hyperlink"
 
 export interface IconProps {
@@ -14,7 +13,7 @@ export interface IconLabelProps {
   isHyperlink?: boolean
 }
 
-const IconLabel = memo(({
+const IconLabel = ({
   className = "flex flex-row items-center space-x-2",
   Icon,
   iconProps = {},
@@ -27,6 +26,6 @@ const IconLabel = memo(({
       {isHyperlink ? <Hyperlink link={label} /> : <span>{label}</span>}
     </span>
   )
-})
+}
 
 export default IconLabel

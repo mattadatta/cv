@@ -1,9 +1,7 @@
-import { memo } from "react"
-
-const InlineDivider = memo(() => {
+const InlineDivider = () => {
   return (
     <span className="font-black">|</span>
   )
-})
+}
 
 export default InlineDivider

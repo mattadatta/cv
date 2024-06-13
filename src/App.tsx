@@ -1,4 +1,3 @@
-import { memo } from "react"
 import { useExapnded, useTheme } from "./store"
 import Button from "./components/Button"
 import Resume from './components/Resume'
@@ -11,7 +10,7 @@ interface ThemeWrapperProps {
   className?: string
 }
 
-const ThemeWrapper = memo(({ children, className = '' }: ThemeWrapperProps) => {
+const ThemeWrapper = ({ children, className = '' }: ThemeWrapperProps) => {
   const { getTheme } = useTheme()
   const themeSelector = getTheme() === 'dark' ? 'dark' : ''
 
@@ -20,36 +19,36 @@ const ThemeWrapper = memo(({ children, className = '' }: ThemeWrapperProps) => {
       {children}
     </div>
   )
-})
+}
 
-const ExpandButton = memo(() => {
+const ExpandButton = () => {
   const { isExpanded, toggleExpanded } = useExapnded()
   return (
     <Button onClick={toggleExpanded}>
       {isExpanded ? (<PageRemove className="fill-current" />) : (<PageAdd className="fill-current" />)}
     </Button>
   )
-})
+}
 
-const PrintButton = memo(() => {
+const PrintButton = () => {
   const { handlePrint } = usePrint()
   return (
     <Button onClick={handlePrint}>
       <Print className="fill-current" />
     </Button>
   )
-})
+}
 
-const ThemeButton = memo(() => {
+const ThemeButton = () => {
   const { getTheme, toggleTheme } = useTheme()
   return (
     <Button onClick={toggleTheme}>
       {getTheme() === 'dark' ? (<LightIcon className="fill-current" />) : (<DarkIcon className="fill-current" />)}
     </Button>
   )
-})
+}
 
-const Controls = memo(() => {
+const Controls = () => {
   return (
     <div className="absolute w-48 top-0 -right-52">
       <div className="fixed top-0 flex flex-col items-start space-y-2 p-4 bg-white dark:bg-gray-800">
@@ -62,9 +61,9 @@ const Controls = memo(() => {
       </div>
     </div>
   )
-})
+}
 
-const PageOverlays = memo(() => {
+const PageOverlays = () => {
   const { isExpanded } = useExapnded()
   const pageCount = isExpanded ? 3 : 1
   const pages = Array.from(new Array(pageCount), (_, i) => i)
@@ -80,9 +79,9 @@ const PageOverlays = memo(() => {
       ))}
     </div>
   )
-})
+}
 
-const Paper = memo(() => {
+const Paper = () => {
   const { printableRef } = usePrint()
   const { isExpanded } = useExapnded()
   return (
@@ -93,18 +92,18 @@ const Paper = memo(() => {
       </ThemeWrapper>
     </div>
   )
-})
+}
 
-const Container = memo(() => {
+const Container = () => {
   return (
     <div className="flex-1 flex flex-col items-stretch w-[216mm] relative">
       <Paper />
       <Controls />
     </div>
   )
-})
+}
 
-const App = memo(() => {
+const App = () => {
   return (
     <ThemeWrapper className="flex flex-col items-center bg-gray-200 dark:bg-gray-900 text-black dark:text-white">
       <PrintProvider>
@@ -112,6 +111,6 @@ const App = memo(() => {
       </PrintProvider>
     </ThemeWrapper>
   )
-})
+}
 
 export default App

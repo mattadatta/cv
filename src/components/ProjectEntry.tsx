@@ -1,4 +1,3 @@
-import { memo } from "react"
 import { ProjectInfo } from "../schema/cv"
 import TagBlock from "./TagBlock"
 import IconLabel from "./IconLabel"
@@ -9,7 +8,7 @@ export interface ProjectEntryProps {
   data: ProjectInfo
 }
 
-const ProjectEntry = memo(({ data }: ProjectEntryProps) => {
+const ProjectEntry = ({ data }: ProjectEntryProps) => {
   const { title, tags, links, summary, lines } = data
   const { isExpanded } = useExapnded()
 
@@ -43,6 +42,6 @@ const ProjectEntry = memo(({ data }: ProjectEntryProps) => {
         </ul>}
     </div>
   )
-})
+}
 
 export default ProjectEntry

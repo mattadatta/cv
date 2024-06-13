@@ -1,12 +1,10 @@
-import { memo } from "react"
 import TagChip from "./TagChip"
 
 export interface TagBlockProps {
   labels: string[]
 }
 
-const TagBlock = memo(({ labels }: TagBlockProps) => {
-
+const TagBlock = ({ labels }: TagBlockProps) => {
   return (
     <div className="flex flex-row flex-wrap pt-1">
       {labels.map((l) => (
@@ -16,6 +14,6 @@ const TagBlock = memo(({ labels }: TagBlockProps) => {
       ))}
     </div>
   )
-})
+}
 
 export default TagBlock

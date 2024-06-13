@@ -1,4 +1,4 @@
-import { Fragment, memo } from "react"
+import { Fragment } from "react"
 import EmploymentEntry from "./EmploymentEntry"
 import { useCv, useExapnded } from "../store"
 import Section from "./Section"
@@ -9,7 +9,7 @@ import TagBlock from "./TagBlock"
 import ProjectEntry from "./ProjectEntry"
 import { formatAddress } from "../util/address"
 
-const NameAndTitleSection = memo(() => {
+const NameAndTitleSection = () => {
   const { name, tagline } = useCv().whoami
 
   return (
@@ -18,9 +18,9 @@ const NameAndTitleSection = memo(() => {
       <h2 className="font-black text-xl text-gray-800 dark:text-gray-200">{tagline.toUpperCase()}</h2>
     </div>
   )
-})
+}
 
-const ContactSection = memo(() => {
+const ContactSection = () => {
   const { address, contactInfo } = useCv().whoami
   const { number, email, links } = contactInfo
 
@@ -57,9 +57,9 @@ const ContactSection = memo(() => {
       </span>
     </div>
   )
-})
+}
 
-const IdentityHeader = memo(() => {
+const IdentityHeader = () => {
   const { summary } = useCv().whoami
 
   return (
@@ -71,9 +71,9 @@ const IdentityHeader = memo(() => {
       <h3 className="text-gray-700 dark:text-gray-100 leading-5">{summary}</h3>
     </div>
   )
-})
+}
 
-const ExpertiseSection = memo(() => {
+const ExpertiseSection = () => {
   const { tags } = useCv().whoami
 
   return (
@@ -85,9 +85,9 @@ const ExpertiseSection = memo(() => {
       <TagBlock labels={tags} />
     </Section>
   )
-})
+}
 
-const EducationSection = memo(() => {
+const EducationSection = () => {
   const { education } = useCv()
 
   return (
@@ -97,9 +97,9 @@ const EducationSection = memo(() => {
       ))}
     </Section>
   )
-})
+}
 
-const EmploymentSection = memo(() => {
+const EmploymentSection = () => {
   const employment = useCv().employment.filter((d) => !d.hidden)
   const { isExpanded } = useExapnded()
   const count = isExpanded ? employment.length : 3
@@ -123,9 +123,9 @@ const EmploymentSection = memo(() => {
       ))}
     </Section>
   )
-})
+}
 
-const ProjectsSection = memo(() => {
+const ProjectsSection = () => {
   const projects = useCv().projects.filter((d) => !d.hidden)
   const { isExpanded } = useExapnded()
   const count = isExpanded ? projects.length : 2
@@ -145,9 +145,9 @@ const ProjectsSection = memo(() => {
       ))}
     </Section>
   )
-})
+}
 
-const Resume = memo(() => {
+const Resume = () => {
   const { isExpanded } = useExapnded()
 
   return (
@@ -161,6 +161,6 @@ const Resume = memo(() => {
       <ProjectsSection />
     </div>
   )
-})
+}
 
 export default Resume

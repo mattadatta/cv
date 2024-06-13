@@ -1,4 +1,3 @@
-import { memo } from "react"
 import { EducationInfo } from "../schema/cv"
 import { formatYear } from "../util/date"
 import { formatAddress } from "../util/address"
@@ -12,7 +11,7 @@ export interface EducationEntryProps {
   data: EducationInfo
 }
 
-const EducationEntry = memo(({ data }: EducationEntryProps) => {
+const EducationEntry = ({ data }: EducationEntryProps) => {
   const { degree, institution, startDate, endDate, address, accolades } = data
   const { isExpanded } = useExapnded()
 
@@ -40,6 +39,6 @@ const EducationEntry = memo(({ data }: EducationEntryProps) => {
       </span>
     </div>
   )
-})
+}
 
 export default EducationEntry

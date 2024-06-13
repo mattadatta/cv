@@ -1,11 +1,9 @@
-import { memo } from "react"
-
 export interface HyperlinkProps {
   link: string
   label?: string
 }
 
-const Hyperlink = memo(({ link, label = link }: HyperlinkProps) => {
+const Hyperlink = ({ link, label = link }: HyperlinkProps) => {
   return (
     <a
       className="underline"
@@ -15,6 +13,6 @@ const Hyperlink = memo(({ link, label = link }: HyperlinkProps) => {
       {label}
     </a>
   )
-})
+}
 
 export default Hyperlink

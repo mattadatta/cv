@@ -48,13 +48,10 @@ const ContactSection = () => {
             label={url}
             isHyperlink={true} />)
       })}
-      <span className="flex flex-row-reverse items-center space-x-reverse space-x-1">
-        <IconLabel
-          className={reversedIconStyle}
-          Icon={Location}
-          label={formatAddress(address)} />
-        <span className="font-light text-xs">{"(+ Remote/Hybrid) "}</span>
-      </span>
+      <IconLabel
+        className={reversedIconStyle}
+        Icon={Location}
+        label={formatAddress(address)} />
     </div>
   )
 }
@@ -109,13 +106,12 @@ const EmploymentSection = () => {
     <Section
       Icon={BriefcaseLocked}
       title="Employment"
-      remark="(references available upon request)"
       className="flex flex-col items-stretch pb-2"
     >
       {employment.slice(0, count).map((d, i) => (
         <Fragment key={d.endDate}>
           {/* TODO: need better way to do page management */}
-          {isExpanded && (i == 1) && (<div className="relative h-[6.5rem]" />)}
+          {isExpanded && (i == 1) && (<div className="relative h-[7rem]" />)}
 
           {(i > 0) && (<div className={`border-dotted border-t border-gray-700 dark:border-gray-300 mt-3 ${bottomMargin}`} />)}
           <EmploymentEntry data={d} />
@@ -157,7 +153,7 @@ const Resume = () => {
       <EducationSection />
       <EmploymentSection />
       {/* TODO: need better way to do page management */}
-      {isExpanded && (<div className="h-[6rem]" />)}
+      {isExpanded && (<div className="h-[5rem]" />)}
       <ProjectsSection />
     </div>
   )

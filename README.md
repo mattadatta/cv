@@ -1,6 +1,6 @@
 # Curriculum Vitae
 
-The CV of Matthew C. Brown.
+The TypeScript source code for the CV of Matthew C. Brown.
 
 Written in TypeScript with React and TailwindCSS.
 

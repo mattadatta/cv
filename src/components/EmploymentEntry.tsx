@@ -1,12 +1,12 @@
 import { EmploymentInfo } from "../schema/cv"
-import { formatYear } from "../util/date"
+import { formatMonthAndYear } from "../util/date"
 import { formatAddress } from "../util/address"
 import InlineDivider from "./InlineDivider"
 import TagBlock from "./TagBlock"
 import { useExapnded } from "../store"
 import { ArrowRight } from "./icons"
 
-const formatDate = formatYear
+const formatDate = formatMonthAndYear
 
 export interface EmploymentEntryProps {
   data: EmploymentInfo
